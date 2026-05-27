@@ -1,10 +1,12 @@
 name: Trigger Playwright Tests
 
+run-name: "${{ github.event.repository.name }} ${{ github.ref_name }} → ${{ github.base_ref || github.event.repository.default_branch }}"
+
 on:
-  push:   # fires on any branch — works for both direct pushes and PR branches
+  push:
 
 permissions:
-  statuses: write   # allows GITHUB_TOKEN to stamp the commit as pending
+  statuses: write
 
 jobs:
   trigger:
@@ -32,4 +34,6 @@ jobs:
           repository: AlexWork93/playwright_example_26
           event-type: app-updated
           client-payload: >
-            {"sha": "${{ github.sha }}", "repo": "${{ github.repository }}"}
+            {"sha": "${{ github.sha }}", "repo": "${{ github.repository }}",
+             "repo_name": "${{ github.event.repository.name }}", "ref_name": "${{ github.ref_name }}",
+             "base_ref": "${{ github.base_ref || github.event.repository.default_branch }}"}
