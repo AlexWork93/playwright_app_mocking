@@ -1,0 +1,24 @@
+name: Trigger Playwright Tests
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  trigger:
+    name: Notify playwright_example_26
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Send repository_dispatch to test suite
+        uses: peter-evans/repository-dispatch@v3
+        with:
+          token: ${{ secrets.PLAYWRIGHT_SUITE_PAT }}
+          repository: AlexWork93/playwright_example_26
+          event-type: app-updated
+          client-payload: |
+            {
+              "ref": "${{ github.ref }}",
+              "sha": "${{ github.sha }}",
+              "message": "${{ github.event.head_commit.message }}"
+            }
