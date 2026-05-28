@@ -4,6 +4,10 @@ run-name: "${{ github.event.repository.name }} ${{ github.ref_name }} → ${{ gi
 
 on:
   push:
+    branches-ignore:
+      - main
+      - staging
+      - dev
 
 permissions:
   statuses: write
