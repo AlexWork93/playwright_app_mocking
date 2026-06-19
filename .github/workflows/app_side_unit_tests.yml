@@ -17,5 +17,5 @@ jobs:
     steps:
       - name: Run unit tests
         run: |
-          echo "::notice::Unit tests placeholder — always passes until real tests are added."
-          echo "Replace this step with your test command, e.g. npm test / npx jest / npx vitest run"
+          echo "::notice::Unit tests placeholder — always passes."
+          echo "Replace with: npm test / npx jest / npx vitest run"
