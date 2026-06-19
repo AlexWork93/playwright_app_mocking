@@ -16,12 +16,12 @@ jobs:
     name: Unit Tests (placeholder)
     runs-on: ubuntu-latest
     timeout-minutes: 5
-
+    
     steps:
       - name: Run unit tests
         run: |
-          echo "::notice::Unit tests placeholder — always passes until real tests are added."
-          echo "Replace this step with your test command, e.g. npm test / npx jest / npx vitest r
+          echo "::notice::Unit tests placeholder — always passes."
+          echo "Replace with: npm test / npx jest / npx vitest run"
 
   dispatch:
     name: Notify playwright_example_26
