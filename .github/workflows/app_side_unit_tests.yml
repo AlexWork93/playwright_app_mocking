@@ -1,0 +1,21 @@
+name: Unit Tests
+
+# Triggered either directly on push/PR within the app repo,
+# or dispatched by the playwright suite repo before integration tests run.
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [dev, staging, main]
+
+jobs:
+  unit:
+    name: Unit Tests (placeholder)
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Run unit tests
+        run: |
+          echo "::notice::Unit tests placeholder — always passes."
+          echo "Replace with: npm test / npx jest / npx vitest run"
